@@ -8,7 +8,7 @@
       <nav>
         <h3>Whats for dinner?</h3>
         <button>ADD A RECIPE</button>
-      </nav>
+      </div>
     </header>
     <main>
       <div class="section-div">
@@ -16,26 +16,33 @@
           <form class="recipe-form" action="">
           <h2>What are you looking for?</h2>
         <label for="">
-          <input type="radio">
+          <input id='side' name='item-select' type="radio" >
           Side
         </label> 
         <label for="">
-          <input type="radio">
+          <input id='main' name='item-select' type="radio" >
           Main Dish
         </label>
         <label for="">
-          <input type="radio">
+          <input id='dessert' name='item-select' type="radio">
           Dessert
         </label>
         <label for="">
-          <input type="radio">
+          <input id="entire-meal" name='item-select' type="radio">
           Entire Meal
         </label>
           <button class="lets-cook-button">Let's Cook!</button>
          </form>
         </section>
         <section class="content-box">
-          <img class='cookpot-img' src="assets/cookpot.svg" alt="cooking-pot">
+          <section class='unhidden hidden'>
+          <p>You should make:</p>
+          <h2></h2>
+          </section>
+          <img  class='cookpot-img' src="assets/cookpot.svg" alt="cooking-pot">
+          <div class="clearbox">
+            <button class="clear-bttn">Clear</button>
+          </div>
         </section>
       </div>
     </main>

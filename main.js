@@ -47,7 +47,96 @@ var desserts = [
     'Eclairs'
 ];
 
+var letsCookButton = document.querySelector(".lets-cook-button")
+var selectedMealText = document.querySelector(".selected-type-of-meal")
+var cookpotImg =document.querySelector(".cookpot-img")
 
+
+var hiddenSection = document.querySelector('.hidden');
+var hiddenHeading = hiddenSection.querySelector('h2');
+
+//input querys
+var sidesRadioButton = document.getElementById("side");
+var mainsRadioButton = document.getElementById("main");
+var dessertsRadioButton = document.getElementById("dessert");
+var entireMealRadioButton = document.getElementById("entire-meal");
+var radios = document.getElementsByName('item-select');
+
+var clearButton = document.querySelector('.clear-bttn')
+
+
+// event listeners
+letsCookButton.addEventListener('click', displayRandomDish);
+
+clearButton.addEventListener('click', clearResults)
+
+// functions
+
+function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+  }
+
+function getRandomDish (dishArray) {
+    var randomIndex = getRandomIndex(dishArray)
+    if (dishArray === sides) {
+        return sides[randomIndex];
+    } else if (dishArray === mains) {
+        return mains[randomIndex];
+    } else if (dishArray === desserts) {
+        return desserts[randomIndex];
+    }
+    return dishArray[randomIndex]
+}
+
+
+var selectedCategory;
+function displayRandomDish(e) {
+    hiddenSection.classList.remove('hidden');
+
+    
+    if (sidesRadioButton.checked) {
+        selectedCategory = 'side';
+    } else if (mainsRadioButton.checked) {
+        selectedCategory = 'main';
+    } else if (dessertsRadioButton.checked) {
+        selectedCategory = 'dessert';
+    } else if (entireMealRadioButton.checked) {
+        selectedCategory = 'entire-meal';
+    } else {
+        selectedCategory = '';
+    }
+
+    hiddenHeading.textContent = selectedCategory;
+
+    var selectedArray;
+    if (selectedCategory === 'side') {
+        selectedArray = sides;
+    } else if (selectedCategory === 'main') {
+        selectedArray = mains;
+    } else if (selectedCategory === 'dessert') {
+        selectedArray = desserts;
+    } else {
+        selectedArray = [];
+    }
+
+    var randomDish = getRandomDish(selectedArray);
+    var dishHeading = document.querySelector('.content-box h2');
+    dishHeading.textContent = randomDish;
+   
+    cookpotImg.style.display = 'none';
+    e.preventDefault();
+}
+
+function clearResults(){
+     selectedCategory = '';
+     hiddenSection.classList.add('hidden');
+     cookpotImg.style.display = '';
+
+     for (var i = 0; i < radios.length; i++) {
+        console.log(radios, '<<<<<<<')
+         radios[i].checked = false;
+     }
+}
 
 
 

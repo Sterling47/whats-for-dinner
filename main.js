@@ -50,10 +50,11 @@ var desserts = [
 var letsCookButton = document.querySelector(".lets-cook-button")
 var selectedMealText = document.querySelector(".selected-type-of-meal")
 var cookpotImg =document.querySelector(".cookpot-img")
-
-
+var addRecipeButton = document.querySelector('.add-recipe-bttn')
+var clearButton = document.querySelector('.clear-bttn')
 var hiddenSection = document.querySelector('.hidden');
 var hiddenHeading = hiddenSection.querySelector('h2');
+var recipeForm = document.querySelector('.new-recipe')
 
 //input querys
 var sidesRadioButton = document.getElementById("side");
@@ -62,13 +63,12 @@ var dessertsRadioButton = document.getElementById("dessert");
 var entireMealRadioButton = document.getElementById("entire-meal");
 var radios = document.getElementsByName('item-select');
 
-var clearButton = document.querySelector('.clear-bttn')
 
 
 // event listeners
 letsCookButton.addEventListener('click', displayRandomDish);
-
 clearButton.addEventListener('click', clearResults)
+addRecipeButton.addEventListener('click', showNewRecipeForm)
 
 // functions
 
@@ -138,6 +138,9 @@ function clearResults(){
      }
 }
 
+function showNewRecipeForm() {
+    recipeForm.classList.remove('hidden')
+}
 
 
 

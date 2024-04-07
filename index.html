@@ -7,7 +7,7 @@
     <header>
       <nav>
         <h3>Whats for dinner?</h3>
-        <button>ADD A RECIPE</button>
+        <button class="add-recipe-bttn">ADD A RECIPE</button>
       </div>
     </header>
     <main>
@@ -15,19 +15,19 @@
         <section class="form-box">
           <form class="recipe-form" action="">
           <h2>What are you looking for?</h2>
-        <label for="">
+        <label>
           <input id='side' name='item-select' type="radio" >
           Side
         </label> 
-        <label for="">
+        <label>
           <input id='main' name='item-select' type="radio" >
           Main Dish
         </label>
-        <label for="">
+        <label>
           <input id='dessert' name='item-select' type="radio">
           Dessert
         </label>
-        <label for="">
+        <label>
           <input id="entire-meal" name='item-select' type="radio">
           Entire Meal
         </label>
@@ -46,6 +46,17 @@
         </section>
       </div>
     </main>
+    <footer>
+      <form class="new-recipe hidden">
+        <label class="recipe-label">Recipe Type:
+          <input type="text">
+        </label>
+        <label class="recipe-label">Recipe Name:
+          <input type="text">
+        </label>
+        <button class="add-new">ADD NEW</button>
+      </form>
+    </footer>
   </body>
   <script type="text/javascript" src="main.js"></script>
 </html>

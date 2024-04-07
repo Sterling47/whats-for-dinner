@@ -41,7 +41,7 @@ nav button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: calc(100vh - 3.01rem);
+    height: calc(100vh - 10.01rem);
 }
 .form-box {
     display: flex;
@@ -82,7 +82,8 @@ nav button {
 }
 
 .unhidden {
-
+margin-top: 6.5rem;
+text-align: center;
 }
 
 .hidden {
@@ -92,8 +93,7 @@ display: none;
 .cookpot-img {
     width: 10rem;
     height: 10rem;
-    margin-top: 3.5rem;
-    border: 2px red solid;
+    margin-top: 5rem;
 }
 
 .clearbox{
@@ -107,3 +107,22 @@ display: none;
 .clear-bttn {
  margin: 20px 40px
 }
+
+.new-recipe {
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    justify-content:flex-start;
+    gap:2rem;
+    align-items: center;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    background-color: rgba(225, 225, 225, .9);
+    overflow: hidden;
+    bottom: 0;
+    margin: 0;
+}
+
+
+

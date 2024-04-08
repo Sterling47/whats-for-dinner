@@ -148,7 +148,7 @@ function clearResults(){
     selectedCategory = '';
     hiddenSection.classList.add('hidden');
     cookpotImg.style.display = '';
-
+    recipeForm.classList.add('hidden')
     for (var i = 0; i < radios.length; i++) {
         radios[i].checked = false;
     }
@@ -179,8 +179,9 @@ function submitNewRecipe(e){
 
     dishHeading.textContent = recipeName;
     cookpotImg.style.display = 'none';
-
+    
     e.preventDefault();
+    recipeForm.classList.add('hidden')
 }
 
 

@@ -125,6 +125,14 @@ function displayRandomDish(e) {
         selectedArray = mains;
     } else if (selectedCategory === 'dessert') {
         selectedArray = desserts;
+    } else if (selectedCategory === 'entire-meal') {
+        var randomSide = getRandomDish(sides);
+        var randomMain = getRandomDish(mains);
+        var randomDessert = getRandomDish(desserts);
+
+        dishHeading.textContent = `${randomMain} with ${randomSide} & ${randomDessert} for dessert!`;
+        cookpotImg.style.display = 'none';
+        e.preventDefault();
     } else {
         selectedArray = [];
     }
@@ -151,9 +159,8 @@ function showNewRecipeForm() {
 }
 
 function submitNewRecipe(e){
-    console.log('hello')
     hiddenSection.classList.remove('hidden');
-    var recipeType = recipeTypeInput.value.toLowerCase().trim(); // Ensure case-insensitive matching
+    var recipeType = recipeTypeInput.value.toLowerCase().trim(); 
     var recipeName = recipeNameInput.value
 
     if (recipeType === 'side') {
@@ -163,7 +170,7 @@ function submitNewRecipe(e){
     } else if (recipeType === 'dessert') {
         desserts.push(recipeName);
     } else {
-        alert('Please specify a valid recipe type: side, main, or dessert.');
+        recipeForm.innerHTML += '<p>Please specify a valid recipe type: side, main, or dessert.<p/>';
         return;
     }
 

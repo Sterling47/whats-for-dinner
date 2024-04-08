@@ -56,7 +56,10 @@ nav button {
     display: flex;
     flex-direction: column;
     margin: 2rem;
+}
 
+.astric {
+    color: red;
 }
 
 .recipe-form label {
